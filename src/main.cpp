@@ -52,8 +52,8 @@ int main() {
     map_waypoints_dy.push_back(d_y);
   }
 
-  TrajectoryPlanner tp {49.5, map_waypoints_s, map_waypoints_x, map_waypoints_y};
-  BehavioralModule bm {1};
+  TrajectoryPlanner tp {map_waypoints_s, map_waypoints_x, map_waypoints_y};
+  BehavioralModule bm {49.5, 1};
 
   h.onMessage([&tp, &bm]
               (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,

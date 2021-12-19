@@ -6,24 +6,22 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
-
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.cpp
-TrajectoryPlanner.hpp
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.hpp
-spline.h
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/spline.h
-debug.h
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/debug.h
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehavioralModule.cpp
+BehavioralModule.hpp
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehavioralModule.hpp
 helpers.h
 /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/helpers.h
+debug.h
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/debug.h
 
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.hpp
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehavioralModule.hpp
 vector
 -
 string
 -
 State.hpp
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
+
 /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
 
 /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/debug.h
@@ -33,6 +31,8 @@ string
 -
 iostream
 -
+State.hpp
+/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
 
 /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/helpers.h
 math.h
@@ -40,21 +40,5 @@ math.h
 string
 -
 vector
--
-
-/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/spline.h
-cstdio
--
-cassert
--
-cmath
--
-vector
--
-algorithm
--
-sstream
--
-string
 -
 

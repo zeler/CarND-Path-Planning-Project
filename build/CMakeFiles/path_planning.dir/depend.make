@@ -4,6 +4,7 @@
 CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o: ../src/BehavioralModule.cpp
 CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o: ../src/BehavioralModule.hpp
 CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o: ../src/State.hpp
+CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o: ../src/debug.h
 CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o: ../src/helpers.h
 
 CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o: ../src/State.hpp

@@ -13,12 +13,10 @@ class TrajectoryPlanner {
 
     public:
         TrajectoryPlanner(
-            double max_speed,
             vector<double> &map_waypoints_s, 
             vector<double> &map_waypoints_x, 
             vector<double> &map_waypoints_y)
             : 
-            max_speed(max_speed),
             map_waypoints_s(map_waypoints_s),
             map_waypoints_x(map_waypoints_x),
             map_waypoints_y(map_waypoints_y),
@@ -39,9 +37,11 @@ class TrajectoryPlanner {
         vector<vector<double>> planTrajectory(State nextState);
     
     private:
-        double car_x, car_y, car_s, car_d, car_yaw, car_speed, end_path_s, end_path_d, ref_velocity, max_speed;
+        double car_x, car_y, car_s, car_d, car_yaw, car_speed, end_path_s, end_path_d, ref_velocity;
         vector<double> map_waypoints_s, map_waypoints_x, map_waypoints_y, previous_path_x, previous_path_y;
         vector<vector<double>> sensor_fusion;
+
+        const double speed_delta = 0.224;
 };
 
 #endif

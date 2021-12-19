@@ -13,15 +13,6 @@
 
 vector<vector<double>> TrajectoryPlanner::planTrajectory(State plan) {
     
-    // this should happen in path planner and plan this only once for the new points 
-    if (plan.isDeccelerate()) {
-        // 5 m/s^2
-        if (ref_velocity >= 0.448)
-            ref_velocity -= 0.224;
-    } else if (ref_velocity < max_speed) {
-        ref_velocity += 0.224;
-    }
-
     int previous_path_size = previous_path_x.size();
     vector<double> sparse_x;
     vector<double> sparse_y;
@@ -102,6 +93,11 @@ vector<vector<double>> TrajectoryPlanner::planTrajectory(State plan) {
 
     // add new points to the path
     for (int i = 0; i < 50 - previous_path_size; i++) {
+        if (ref_velocity >= plan.getTargetSpeed()) {
+            ref_velocity -= speed_delta;
+        } else if (ref_velocity < plan.getTargetSpeed()) {
+            ref_velocity += speed_delta;
+        }
        
         // d = N * 0.02 (car advances every 20 ms) * velocity
         double N = (target_d / (0.02 * ref_velocity / 2.24));

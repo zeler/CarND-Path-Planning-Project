@@ -1,5 +1,14 @@
 #include "BehavioralModule.hpp"
 #include "helpers.h"
+#include "debug.h"
+
+#define ENABLE_STATE_LOG    
+
+#ifdef ENABLE_STATE_LOG
+  #define LOG_STATE(d, s)  {  print_state(d, s); }
+#else
+  #define LOG_STATE(d, s) // do nothing
+#endif
 
 State BehavioralModule::getNextState() {
     
@@ -9,8 +18,6 @@ State BehavioralModule::getNextState() {
     if (previous_path_size > 0) {
         car_s = end_path_s;
     }
-
-    deccelerate = false;
 
     // iterate through all the cars reported by the sensor fusion
     for (int i = 0; i < sensor_fusion.size(); i++) {
@@ -30,15 +37,20 @@ State BehavioralModule::getNextState() {
 
             if ((s > car_s) && (s - car_s) < 30) {
                 if (lane > 0) {
-                    lane = 0;
+                    lane--;
+                } else if (lane < 3) {
+                    lane++;
                 } else {
-                    deccelerate = true;
+                    target_speed = speed;
                 }
             }
         }
     }
 
-    return State { lane, 0, deccelerate };
+    State next_state { lane, target_speed};
+    LOG_STATE("Next state", next_state);
+
+    return next_state;
 }
 
 void BehavioralModule::update(double car_s, 

@@ -3,19 +3,17 @@
 
 class State { 
     public:
-        State(int lane, double car_speed, bool deccelerate) : lane(lane), car_speed(car_speed), deccelerate(deccelerate), executed(false) {};
+        State(int lane, double target_speed) : lane(lane), target_speed(target_speed), executed(false) {};
 
         int getLane() { return lane; }
-        double getCarSpeed() { return car_speed; }
+        double getTargetSpeed() { return target_speed; }
         bool isExecuted() { return executed; }
         void setExecuted(bool executed) { this->executed = executed; }
-        bool isDeccelerate() { return deccelerate; }
 
     private:
         int lane;
-        double car_speed;
+        double target_speed;
         bool executed;
-        bool deccelerate;
 };
 
 #endif

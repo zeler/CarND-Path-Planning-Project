@@ -11,7 +11,7 @@ using std::vector;
 
 class BehavioralModule { 
     public:
-        BehavioralModule(int lane) : lane(1) {}
+        BehavioralModule(double max_speed, int lane) : max_speed(max_speed), lane(lane), target_speed(max_speed) {}
         State getNextState();
 
         void update(double car_s, 
@@ -25,8 +25,11 @@ class BehavioralModule {
 
     private:
         int lane;
+        double max_speed;
+        double target_speed;
+
+        // updated from simulator
         double car_s, end_path_s, car_d, end_path_d, car_speed;
-        bool deccelerate;
         vector<double> previous_path_x, previous_path_y;
         vector<vector<double>> sensor_fusion;
 };

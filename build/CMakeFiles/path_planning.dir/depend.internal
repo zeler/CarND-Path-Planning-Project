@@ -5,6 +5,7 @@ CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o
  /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehavioralModule.cpp
  /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehavioralModule.hpp
  /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
+ /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/debug.h
  /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/helpers.h
 CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o
  /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/State.hpp
