@@ -70,6 +70,8 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "*.rh": "cpp",
+        "*.main": "cpp"
     }
 }

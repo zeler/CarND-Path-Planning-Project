@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o"
+  "CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o"
+  "CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o"
   "CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o"
   "CMakeFiles/path_planning.dir/src/main.cpp.o"
   "path_planning"

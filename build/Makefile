@@ -123,32 +123,59 @@ path_planning/fast:
 	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/build
 .PHONY : path_planning/fast
 
-src/BehavioralModule.o: src/BehavioralModule.cpp.o
+src/BehaviorPlanner.o: src/BehaviorPlanner.cpp.o
 
-.PHONY : src/BehavioralModule.o
+.PHONY : src/BehaviorPlanner.o
 
 # target to build an object file
-src/BehavioralModule.cpp.o:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.o
-.PHONY : src/BehavioralModule.cpp.o
+src/BehaviorPlanner.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o
+.PHONY : src/BehaviorPlanner.cpp.o
 
-src/BehavioralModule.i: src/BehavioralModule.cpp.i
+src/BehaviorPlanner.i: src/BehaviorPlanner.cpp.i
 
-.PHONY : src/BehavioralModule.i
+.PHONY : src/BehaviorPlanner.i
 
 # target to preprocess a source file
-src/BehavioralModule.cpp.i:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.i
-.PHONY : src/BehavioralModule.cpp.i
+src/BehaviorPlanner.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.i
+.PHONY : src/BehaviorPlanner.cpp.i
 
-src/BehavioralModule.s: src/BehavioralModule.cpp.s
+src/BehaviorPlanner.s: src/BehaviorPlanner.cpp.s
 
-.PHONY : src/BehavioralModule.s
+.PHONY : src/BehaviorPlanner.s
 
 # target to generate assembly for a file
-src/BehavioralModule.cpp.s:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehavioralModule.cpp.s
-.PHONY : src/BehavioralModule.cpp.s
+src/BehaviorPlanner.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.s
+.PHONY : src/BehaviorPlanner.cpp.s
+
+src/TrajectoryGenerator.o: src/TrajectoryGenerator.cpp.o
+
+.PHONY : src/TrajectoryGenerator.o
+
+# target to build an object file
+src/TrajectoryGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o
+.PHONY : src/TrajectoryGenerator.cpp.o
+
+src/TrajectoryGenerator.i: src/TrajectoryGenerator.cpp.i
+
+.PHONY : src/TrajectoryGenerator.i
+
+# target to preprocess a source file
+src/TrajectoryGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.i
+.PHONY : src/TrajectoryGenerator.cpp.i
+
+src/TrajectoryGenerator.s: src/TrajectoryGenerator.cpp.s
+
+.PHONY : src/TrajectoryGenerator.s
+
+# target to generate assembly for a file
+src/TrajectoryGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.s
+.PHONY : src/TrajectoryGenerator.cpp.s
 
 src/TrajectoryPlanner.o: src/TrajectoryPlanner.cpp.o
 
@@ -213,9 +240,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... path_planning"
-	@echo "... src/BehavioralModule.o"
-	@echo "... src/BehavioralModule.i"
-	@echo "... src/BehavioralModule.s"
+	@echo "... src/BehaviorPlanner.o"
+	@echo "... src/BehaviorPlanner.i"
+	@echo "... src/BehaviorPlanner.s"
+	@echo "... src/TrajectoryGenerator.o"
+	@echo "... src/TrajectoryGenerator.i"
+	@echo "... src/TrajectoryGenerator.s"
 	@echo "... src/TrajectoryPlanner.o"
 	@echo "... src/TrajectoryPlanner.i"
 	@echo "... src/TrajectoryPlanner.s"

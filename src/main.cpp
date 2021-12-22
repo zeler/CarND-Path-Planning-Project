@@ -8,7 +8,8 @@
 #include "Eigen-3.3/Eigen/QR"
 #include "helpers.h"
 #include "TrajectoryPlanner.hpp"
-#include "BehavioralModule.hpp"
+#include "BehaviorPlanner.hpp"
+#include "debug.h"
 
 // for convenience
 using nlohmann::json;
@@ -52,10 +53,13 @@ int main() {
     map_waypoints_dy.push_back(d_y);
   }
 
-  TrajectoryPlanner tp {map_waypoints_s, map_waypoints_x, map_waypoints_y};
-  BehavioralModule bm {49.5, 1};
+  const double  max_speed = 49.5;
+  const int starting_lane = 1;
 
-  h.onMessage([&tp, &bm]
+  TrajectoryPlanner tp {map_waypoints_s, map_waypoints_x, map_waypoints_y};
+  BehaviorPlanner bp {max_speed, starting_lane};
+
+  h.onMessage([&tp, &bp]
               (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
                uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -96,10 +100,10 @@ int main() {
 
           json msgJson;
 
-          bm.update(car_s, car_d, car_speed, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
+          bp.update(car_s, car_d, car_speed, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
           tp.update(car_x, car_y, car_s, car_d, car_yaw, car_speed, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
-          vector<vector<double>> trajectory = tp.planTrajectory(bm.getNextState());
-         
+          vector<vector<double>> trajectory = tp.planTrajectory(bp.getNextState());
+
           msgJson["next_x"] = trajectory[0];
           msgJson["next_y"] = trajectory[1];
 
@@ -115,13 +119,16 @@ int main() {
     }  // end websocket if
   }); // end h.onMessage
 
-  h.onConnection([&h](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
+  h.onConnection([&h, &bp, &tp, &max_speed, &starting_lane](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
     std::cout << "Connected!!!" << std::endl;
+    //reset modules if we disconnected
+    bp.reset(max_speed, starting_lane);
+    tp.setRefVelocity(0);
   });
 
   h.onDisconnection([&h](uWS::WebSocket<uWS::SERVER> ws, int code,
                          char *message, size_t length) {
-    ws.close();
+    ws.close(); 
     std::cout << "Disconnected" << std::endl;
   });
 

@@ -4,7 +4,8 @@
 #include <vector>
 #include <string>
 
-#include "State.hpp"
+#include "TransitionState.hpp"
+#include "TrajectoryGenerator.hpp"
 
 using std::string;
 using std::vector;
@@ -20,7 +21,7 @@ class TrajectoryPlanner {
             map_waypoints_s(map_waypoints_s),
             map_waypoints_x(map_waypoints_x),
             map_waypoints_y(map_waypoints_y),
-            ref_velocity(0) {}
+            tg(TrajectoryGenerator{map_waypoints_s, map_waypoints_x, map_waypoints_y}), ref_velocity(0) {}
 
         void update(double car_x, 
                     double car_y, 
@@ -34,14 +35,18 @@ class TrajectoryPlanner {
                     vector<double> previous_path_y, 
                     vector<vector<double>> sensor_fusion);
 
-        vector<vector<double>> planTrajectory(State nextState);
+        vector<vector<double>> planTrajectory(TransitionState nextState);
+
+        void setRefVelocity(double refVelocity) { ref_velocity = refVelocity; }
     
     private:
         double car_x, car_y, car_s, car_d, car_yaw, car_speed, end_path_s, end_path_d, ref_velocity;
         vector<double> map_waypoints_s, map_waypoints_x, map_waypoints_y, previous_path_x, previous_path_y;
         vector<vector<double>> sensor_fusion;
+        TrajectoryGenerator tg;
 
         const double speed_delta = 0.224;
+        const int step_count = 50;
 };
 
 #endif

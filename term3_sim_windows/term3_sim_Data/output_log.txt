@@ -19,7 +19,7 @@ Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Projec
 Loading C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.059 seconds
+- Completed reload, in  0.065 seconds
 Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\System.dll (this message is harmless)
 OnLevelWasLoaded was found on ReturnToMainMenu
@@ -34,26 +34,26 @@ desktop: 1920x1200 59Hz; virtual: 3840x1517 at -1920,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.698900 ms
+UnloadTime: 0.946000 ms
 Setting up 3 worker threads for Enlighten.
-  Thread -> id: 8464 -> priority: 1 
-  Thread -> id: 397c -> priority: 1 
-  Thread -> id: 4e6c -> priority: 1 
+  Thread -> id: 5e88 -> priority: 1 
+  Thread -> id: 25a0 -> priority: 1 
+  Thread -> id: 5050 -> priority: 1 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.561000 ms
+UnloadTime: 7.853300 ms
 
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 525.
-Total: 0.220100 ms (FindLiveObjects: 0.029700 ms CreateObjectMapping: 0.012000 ms MarkObjects: 0.158100 ms  DeleteObjects: 0.009200 ms)
+Total: 0.241700 ms (FindLiveObjects: 0.032100 ms CreateObjectMapping: 0.016100 ms MarkObjects: 0.171200 ms  DeleteObjects: 0.010200 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.728100 ms
+UnloadTime: 2.101700 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9284.
-Total: 2.055100 ms (FindLiveObjects: 0.357000 ms CreateObjectMapping: 0.126800 ms MarkObjects: 0.874400 ms  DeleteObjects: 0.695800 ms)
+Total: 2.577600 ms (FindLiveObjects: 0.405200 ms CreateObjectMapping: 0.119900 ms MarkObjects: 1.039700 ms  DeleteObjects: 1.012200 ms)
 
 Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\System.Configuration.dll (this message is harmless)
 Platform assembly: C:\Users\michal.paprcka\workspaces\CarND-Path-Planning-Project\term3_sim_windows\term3_sim_Data\Managed\System.Xml.dll (this message is harmless)
@@ -62,85 +62,91 @@ Connection Open
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.623501 ms
+UnloadTime: 12.076500 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 533.
-Total: 5.040800 ms (FindLiveObjects: 0.104100 ms CreateObjectMapping: 0.043100 ms MarkObjects: 0.418200 ms  DeleteObjects: 4.474300 ms)
+Total: 5.734700 ms (FindLiveObjects: 0.087900 ms CreateObjectMapping: 0.063400 ms MarkObjects: 0.470500 ms  DeleteObjects: 5.112300 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-12/19/2021 6:17:35 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.544100 ms
+UnloadTime: 0.584000 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9288.
-Total: 2.114600 ms (FindLiveObjects: 0.310000 ms CreateObjectMapping: 0.100400 ms MarkObjects: 1.016600 ms  DeleteObjects: 0.686600 ms)
+Total: 2.645700 ms (FindLiveObjects: 0.436800 ms CreateObjectMapping: 0.125800 ms MarkObjects: 1.223300 ms  DeleteObjects: 0.859000 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 10.069901 ms
+UnloadTime: 7.270700 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 533.
-Total: 5.158900 ms (FindLiveObjects: 0.080100 ms CreateObjectMapping: 0.044800 ms MarkObjects: 0.416500 ms  DeleteObjects: 4.617000 ms)
+Total: 7.481900 ms (FindLiveObjects: 0.094500 ms CreateObjectMapping: 0.061300 ms MarkObjects: 0.479100 ms  DeleteObjects: 6.846100 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.GameObject:get_transform ()
+  at CommandServer.<EmitTelemetry>m__0 () [0x00000] in <filename unknown>:0 
+  at UnityMainThreadDispatcher+<ActionWrapper>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+UnityEngine.MonoBehaviour:StartCoroutine_Auto_Internal(IEnumerator)
+UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator)
+<Enqueue>c__AnonStorey1:<>m__0()
+UnityMainThreadDispatcher:Update()
+ 
+(Filename:  Line: -1)
+
+12/23/2021 12:18:48 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 12/23/2021 12:18:48 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.365100 ms
+UnloadTime: 0.393800 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9288.
-Total: 2.437500 ms (FindLiveObjects: 0.393100 ms CreateObjectMapping: 0.124500 ms MarkObjects: 1.189700 ms  DeleteObjects: 0.729500 ms)
+Total: 3.106800 ms (FindLiveObjects: 0.443700 ms CreateObjectMapping: 0.130700 ms MarkObjects: 1.634600 ms  DeleteObjects: 0.896900 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.468300 ms
+UnloadTime: 8.275400 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 536.
-Total: 4.907000 ms (FindLiveObjects: 0.095000 ms CreateObjectMapping: 0.051300 ms MarkObjects: 0.453400 ms  DeleteObjects: 4.306600 ms)
+Total: 5.553500 ms (FindLiveObjects: 0.095200 ms CreateObjectMapping: 0.065600 ms MarkObjects: 0.492500 ms  DeleteObjects: 4.899500 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.GameObject:get_transform ()
-  at CommandServer.<EmitTelemetry>m__0 () [0x00000] in <filename unknown>:0 
-  at UnityMainThreadDispatcher+<ActionWrapper>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0 
-  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
-UnityEngine.MonoBehaviour:StartCoroutine_Auto_Internal(IEnumerator)
-UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator)
-<Enqueue>c__AnonStorey1:<>m__0()
-UnityMainThreadDispatcher:Update()
- 
-(Filename:  Line: -1)
-
+12/23/2021 12:45:58 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.304800 ms
+UnloadTime: 0.374900 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9291.
-Total: 2.152700 ms (FindLiveObjects: 0.365600 ms CreateObjectMapping: 0.084600 ms MarkObjects: 1.018600 ms  DeleteObjects: 0.683300 ms)
+Total: 2.276600 ms (FindLiveObjects: 0.383200 ms CreateObjectMapping: 0.103500 ms MarkObjects: 1.081600 ms  DeleteObjects: 0.707400 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.304700 ms
+UnloadTime: 7.520400 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 536.
-Total: 4.559500 ms (FindLiveObjects: 0.076300 ms CreateObjectMapping: 0.050900 ms MarkObjects: 0.379500 ms  DeleteObjects: 4.052300 ms)
+Total: 5.999000 ms (FindLiveObjects: 0.101600 ms CreateObjectMapping: 0.048500 ms MarkObjects: 0.429000 ms  DeleteObjects: 5.418900 ms)
 
 in menu script 0
  
@@ -159,60 +165,54 @@ UnityMainThreadDispatcher:Update()
 (Filename:  Line: -1)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.416200 ms
+UnloadTime: 0.662500 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9291.
-Total: 2.478900 ms (FindLiveObjects: 0.398300 ms CreateObjectMapping: 0.127500 ms MarkObjects: 1.207100 ms  DeleteObjects: 0.745500 ms)
+Total: 2.633300 ms (FindLiveObjects: 0.377700 ms CreateObjectMapping: 0.117400 ms MarkObjects: 1.411600 ms  DeleteObjects: 0.725700 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+BAD SPAWN
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.264100 ms
+UnloadTime: 7.948800 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 539.
-Total: 4.759600 ms (FindLiveObjects: 0.082400 ms CreateObjectMapping: 0.051100 ms MarkObjects: 0.429100 ms  DeleteObjects: 4.195900 ms)
+Total: 5.683200 ms (FindLiveObjects: 0.064100 ms CreateObjectMapping: 0.057900 ms MarkObjects: 0.476700 ms  DeleteObjects: 5.084200 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+12/23/2021 12:50:22 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 12/23/2021 12:50:22 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.340800 ms
+UnloadTime: 0.636100 ms
 
 Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9294.
-Total: 2.417300 ms (FindLiveObjects: 0.391800 ms CreateObjectMapping: 0.117700 ms MarkObjects: 1.174600 ms  DeleteObjects: 0.732500 ms)
+Total: 2.620200 ms (FindLiveObjects: 0.422000 ms CreateObjectMapping: 0.127300 ms MarkObjects: 1.168200 ms  DeleteObjects: 0.901100 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
+coroutine->IsInList()
+ 
+(Filename:  Line: 159)
+
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.121700 ms
+UnloadTime: 7.256600 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 539.
-Total: 4.659300 ms (FindLiveObjects: 0.086700 ms CreateObjectMapping: 0.064300 ms MarkObjects: 0.426400 ms  DeleteObjects: 4.080900 ms)
-
-in menu script 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.343800 ms
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9294.
-Total: 2.076900 ms (FindLiveObjects: 0.359300 ms CreateObjectMapping: 0.075000 ms MarkObjects: 0.948300 ms  DeleteObjects: 0.693500 ms)
-
-Connection Open
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.776100 ms
-
-Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 542.
-Total: 4.755600 ms (FindLiveObjects: 0.086300 ms CreateObjectMapping: 0.052300 ms MarkObjects: 0.446000 ms  DeleteObjects: 4.170500 ms)
+Total: 5.072300 ms (FindLiveObjects: 0.058100 ms CreateObjectMapping: 0.048100 ms MarkObjects: 0.416500 ms  DeleteObjects: 4.549200 ms)
 
 in menu script 0
  
@@ -230,143 +230,41 @@ UnityMainThreadDispatcher:Update()
  
 (Filename:  Line: -1)
 
-12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 12/19/2021 6:20:47 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-
-
-
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.353700 ms
+UnloadTime: 0.346000 ms
 
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9297.
-Total: 2.449100 ms (FindLiveObjects: 0.382900 ms CreateObjectMapping: 0.109900 ms MarkObjects: 1.210800 ms  DeleteObjects: 0.744500 ms)
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9294.
+Total: 2.377400 ms (FindLiveObjects: 0.375000 ms CreateObjectMapping: 0.113900 ms MarkObjects: 1.142900 ms  DeleteObjects: 0.745000 ms)
 
 Connection Open
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.989000 ms
+UnloadTime: 7.661100 ms
 
 Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 542.
-Total: 4.932500 ms (FindLiveObjects: 0.086600 ms CreateObjectMapping: 0.058700 ms MarkObjects: 0.478300 ms  DeleteObjects: 4.308300 ms)
+Total: 4.917800 ms (FindLiveObjects: 0.090700 ms CreateObjectMapping: 0.065800 ms MarkObjects: 0.458800 ms  DeleteObjects: 4.301600 ms)
 
 in menu script 0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-12/19/2021 6:23:16 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.402500 ms
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9297.
-Total: 3.762500 ms (FindLiveObjects: 0.394100 ms CreateObjectMapping: 0.243300 ms MarkObjects: 1.918600 ms  DeleteObjects: 1.205100 ms)
-
-Connection Open
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.GameObject:get_transform ()
+  at CommandServer.<EmitTelemetry>m__0 () [0x00000] in <filename unknown>:0 
+  at UnityMainThreadDispatcher+<ActionWrapper>c__Iterator0.MoveNext () [0x00000] in <filename unknown>:0 
+  at UnityEngine.SetupCoroutine.InvokeMoveNext (IEnumerator enumerator, IntPtr returnValueAddress) [0x00000] in <filename unknown>:0 
+UnityEngine.MonoBehaviour:StartCoroutine_Auto_Internal(IEnumerator)
+UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator)
+<Enqueue>c__AnonStorey1:<>m__0()
+UnityMainThreadDispatcher:Update()
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: -1)
 
-12/19/2021 6:24:38 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-12/19/2021 6:24:38 PM|Error|WebSocket.Close|The WebSocket connection has already been closed.
-12/19/2021 6:24:40 PM|Fatal|WebSocket.acceptException|System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it.
-                            
-                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP, Boolean requireSocketPolicy) [0x00000] in <filename unknown>:0 
-                              at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x00000] in <filename unknown>:0 
-                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPEndPoint remote_end_point) [0x00000] in <filename unknown>:0 
-                              at System.Net.Sockets.TcpClient.Connect (System.Net.IPAddress[] ipAddresses, Int32 port) [0x00000] in <filename unknown>:0 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 9.208800 ms
-
-Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 545.
-Total: 7.295500 ms (FindLiveObjects: 0.103200 ms CreateObjectMapping: 0.079800 ms MarkObjects: 0.551400 ms  DeleteObjects: 6.560200 ms)
-
-in menu script 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.363800 ms
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9300.
-Total: 2.631300 ms (FindLiveObjects: 0.381600 ms CreateObjectMapping: 0.135400 ms MarkObjects: 1.368300 ms  DeleteObjects: 0.745300 ms)
-
-Connection Open
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.760400 ms
-
-Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 545.
-Total: 5.610200 ms (FindLiveObjects: 0.093000 ms CreateObjectMapping: 0.061700 ms MarkObjects: 0.543800 ms  DeleteObjects: 4.910900 ms)
-
-in menu script 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-12/19/2021 6:46:45 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.402300 ms
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9300.
-Total: 3.273100 ms (FindLiveObjects: 0.414000 ms CreateObjectMapping: 0.140100 ms MarkObjects: 1.660400 ms  DeleteObjects: 1.057200 ms)
-
-Connection Open
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 7.506100 ms
-
-Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 548.
-Total: 5.767900 ms (FindLiveObjects: 0.113400 ms CreateObjectMapping: 0.066200 ms MarkObjects: 0.511900 ms  DeleteObjects: 5.075000 ms)
-
-in menu script 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-12/19/2021 6:53:16 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.464000 ms
-
-Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 9303.
-Total: 2.374800 ms (FindLiveObjects: 0.382800 ms CreateObjectMapping: 0.114300 ms MarkObjects: 1.151600 ms  DeleteObjects: 0.724800 ms)
-
-Connection Open
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 8.051800 ms
-
-Unloading 1545 unused Assets to reduce memory usage. Loaded Objects now: 548.
-Total: 5.126200 ms (FindLiveObjects: 0.092700 ms CreateObjectMapping: 0.054100 ms MarkObjects: 0.480000 ms  DeleteObjects: 4.498600 ms)
-
-in menu script 0
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-12/19/2021 6:55:38 PM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
-                              at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
-                              at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+12/23/2021 12:52:53 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 
+12/23/2021 12:52:53 AM|Fatal|WebSocket.acceptException|WebSocketSharp.WebSocketException: The header part of a frame cannot be read from the data source.
+                               at WebSocketSharp.WebSocketFrame+<ParseAsync>c__AnonStorey3.<>m__0 (System.Byte[] header) [0x00000] in <filename unknown>:0 
+                               at WebSocketSharp.Ext+<ReadBytesAsync>c__AnonStorey2.<>m__0 (IAsyncResult ar) [0x00000] in <filename unknown>:0 

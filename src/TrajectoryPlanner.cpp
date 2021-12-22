@@ -11,68 +11,39 @@
   #define LOG_COORDS(d, x, y) // do nothing
 #endif
 
-vector<vector<double>> TrajectoryPlanner::planTrajectory(State plan) {
+vector<vector<double>> TrajectoryPlanner::planTrajectory(TransitionState plan) {
     
     int previous_path_size = previous_path_x.size();
-    vector<double> sparse_x;
-    vector<double> sparse_y;
-    double ref_x = car_x;
-    double ref_y = car_y;
-    double ref_yaw = deg2rad(car_yaw);
+    
+    double ref_x_previous;
+    double ref_y_previous;
+    double ref_x;
+    double ref_y;
+    double ref_yaw;
 
     if (previous_path_size > 0) {
         car_s = end_path_s;
     }
 
     if (previous_path_size < 2) {
-        double prev_car_x = car_x - cos(car_yaw);
-        double prev_car_y = car_y - sin(car_yaw);
+        ref_x = car_x;
+        ref_y = car_y;
+        
+        ref_x_previous = car_x - cos(car_yaw);
+        ref_y_previous = car_y - sin(car_yaw);
 
-        sparse_x.push_back(prev_car_x);
-        sparse_x.push_back(car_x);
-        sparse_y.push_back(prev_car_y);
-        sparse_y.push_back(car_y);
+        ref_yaw = deg2rad(car_yaw);
     } else {
         // first set our reference to the last point of previous path
         ref_x = previous_path_x[previous_path_size - 1];
         ref_y = previous_path_y[previous_path_size - 1];
 
         // calculate ref yaw from last 2 path waypoints
-        double ref_x_previous = previous_path_x[previous_path_size - 2];
-        double ref_y_previous = previous_path_y[previous_path_size - 2];
+        ref_x_previous = previous_path_x[previous_path_size - 2];
+        ref_y_previous = previous_path_y[previous_path_size - 2];
+        
         ref_yaw = atan2(ref_y - ref_y_previous, ref_x - ref_x_previous);
-
-        sparse_x.push_back(ref_x_previous);
-        sparse_x.push_back(ref_x);
-        sparse_y.push_back(ref_y_previous);
-        sparse_y.push_back(ref_y);            
     }
-
-    // add extra 3 points, each 30 metres apart (30, 60. 90 m from actual car_s). 
-    for (int x = 1; x < 4; x++) {
-        vector<double> xy = getXY(car_s + x * 30, getCenterOfLaneFrenet(plan.getLane()), map_waypoints_s, map_waypoints_x, map_waypoints_y);
-        sparse_x.push_back(xy[0]);
-        sparse_y.push_back(xy[1]);
-    }
-
-    LOG_COORDS("WORLD_COORDS: ", sparse_x, sparse_y);
-
-    for (int i = 0; i < sparse_x.size(); i++) {
-    // set car reference angle to 0 deg for an easier math later
-    // euclidean shift
-    double shift_x = sparse_x[i] - ref_x;
-    double shift_y = sparse_y[i] - ref_y;
-
-    // euclidean rotation
-    sparse_x[i] = (shift_x * cos(0 - ref_yaw) - shift_y * sin(0 - ref_yaw));
-    sparse_y[i] = (shift_x * sin(0 - ref_yaw) + shift_y * cos(0 - ref_yaw));
-    }
-
-    LOG_COORDS("LOCAL_COORDS: ", sparse_x, sparse_y);
-
-    // build spline
-    tk::spline s;
-    s.set_points(sparse_x, sparse_y);
 
     vector<double> next_x_vals;
     vector<double> next_y_vals;
@@ -84,45 +55,20 @@ vector<vector<double>> TrajectoryPlanner::planTrajectory(State plan) {
         next_y_vals.push_back(previous_path_y[i]);
     }
 
-    double target_x = 30.0;
-    double target_y = s(target_x);
-    // pythagoras theorem
-    double target_d = sqrt(pow(target_x, 2) + pow(target_y, 2));
+    CarState currentState { ref_x_previous, ref_y_previous, ref_x, ref_y, car_s, car_d, ref_yaw, ref_velocity };
+    int steps = step_count - previous_path_size;
 
-    double x_add_on = 0;
-
-    // add new points to the path
-    for (int i = 0; i < 50 - previous_path_size; i++) {
-        if (ref_velocity >= plan.getTargetSpeed()) {
-            ref_velocity -= speed_delta;
-        } else if (ref_velocity < plan.getTargetSpeed()) {
-            ref_velocity += speed_delta;
-        }
-       
-        // d = N * 0.02 (car advances every 20 ms) * velocity
-        double N = (target_d / (0.02 * ref_velocity / 2.24));
-        double x_point = x_add_on + target_x / N;
-        double y_point = s(x_point);
-        x_add_on = x_point;
-
-        double x_ref = x_point;
-        double y_ref = y_point;
-
-        // rotate back (inverse to previous step)
-        x_point = (x_ref * cos(ref_yaw) - y_ref * sin(ref_yaw));
-        y_point = (x_ref * sin(ref_yaw) + y_ref * cos(ref_yaw));
-
-        // shift back to origin
-        x_point += ref_x;
-        y_point += ref_y;
-
-        next_x_vals.push_back(x_point);
-        next_y_vals.push_back(y_point);
+    vector<vector<double>> new_trajectory = tg.generateTrajectory(currentState, plan, steps);
+    
+    // add all points from the new trajectory
+    for(int i = 0; i < steps; i++) {
+        next_x_vals.push_back(new_trajectory[0][i]);
+        next_y_vals.push_back(new_trajectory[1][i]);
     }
 
-     LOG_COORDS("NEW_COORDS: ", next_x_vals, next_y_vals);
-
-     return {next_x_vals, next_y_vals};
+    this->ref_velocity = new_trajectory[2][0];
+    
+    return {next_x_vals, next_y_vals};
 }
 
 void TrajectoryPlanner::update(double car_x, 
