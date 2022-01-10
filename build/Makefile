@@ -123,86 +123,59 @@ path_planning/fast:
 	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/build
 .PHONY : path_planning/fast
 
-src/BehaviorPlanner.o: src/BehaviorPlanner.cpp.o
+src/behavior/BehaviorPlanner.o: src/behavior/BehaviorPlanner.cpp.o
 
-.PHONY : src/BehaviorPlanner.o
-
-# target to build an object file
-src/BehaviorPlanner.cpp.o:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o
-.PHONY : src/BehaviorPlanner.cpp.o
-
-src/BehaviorPlanner.i: src/BehaviorPlanner.cpp.i
-
-.PHONY : src/BehaviorPlanner.i
-
-# target to preprocess a source file
-src/BehaviorPlanner.cpp.i:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.i
-.PHONY : src/BehaviorPlanner.cpp.i
-
-src/BehaviorPlanner.s: src/BehaviorPlanner.cpp.s
-
-.PHONY : src/BehaviorPlanner.s
-
-# target to generate assembly for a file
-src/BehaviorPlanner.cpp.s:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.s
-.PHONY : src/BehaviorPlanner.cpp.s
-
-src/TrajectoryGenerator.o: src/TrajectoryGenerator.cpp.o
-
-.PHONY : src/TrajectoryGenerator.o
+.PHONY : src/behavior/BehaviorPlanner.o
 
 # target to build an object file
-src/TrajectoryGenerator.cpp.o:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o
-.PHONY : src/TrajectoryGenerator.cpp.o
+src/behavior/BehaviorPlanner.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o
+.PHONY : src/behavior/BehaviorPlanner.cpp.o
 
-src/TrajectoryGenerator.i: src/TrajectoryGenerator.cpp.i
+src/behavior/BehaviorPlanner.i: src/behavior/BehaviorPlanner.cpp.i
 
-.PHONY : src/TrajectoryGenerator.i
+.PHONY : src/behavior/BehaviorPlanner.i
 
 # target to preprocess a source file
-src/TrajectoryGenerator.cpp.i:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.i
-.PHONY : src/TrajectoryGenerator.cpp.i
+src/behavior/BehaviorPlanner.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.i
+.PHONY : src/behavior/BehaviorPlanner.cpp.i
 
-src/TrajectoryGenerator.s: src/TrajectoryGenerator.cpp.s
+src/behavior/BehaviorPlanner.s: src/behavior/BehaviorPlanner.cpp.s
 
-.PHONY : src/TrajectoryGenerator.s
+.PHONY : src/behavior/BehaviorPlanner.s
 
 # target to generate assembly for a file
-src/TrajectoryGenerator.cpp.s:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.s
-.PHONY : src/TrajectoryGenerator.cpp.s
+src/behavior/BehaviorPlanner.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.s
+.PHONY : src/behavior/BehaviorPlanner.cpp.s
 
-src/TrajectoryPlanner.o: src/TrajectoryPlanner.cpp.o
+src/coords/CoordsUtils.o: src/coords/CoordsUtils.cpp.o
 
-.PHONY : src/TrajectoryPlanner.o
+.PHONY : src/coords/CoordsUtils.o
 
 # target to build an object file
-src/TrajectoryPlanner.cpp.o:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o
-.PHONY : src/TrajectoryPlanner.cpp.o
+src/coords/CoordsUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o
+.PHONY : src/coords/CoordsUtils.cpp.o
 
-src/TrajectoryPlanner.i: src/TrajectoryPlanner.cpp.i
+src/coords/CoordsUtils.i: src/coords/CoordsUtils.cpp.i
 
-.PHONY : src/TrajectoryPlanner.i
+.PHONY : src/coords/CoordsUtils.i
 
 # target to preprocess a source file
-src/TrajectoryPlanner.cpp.i:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.i
-.PHONY : src/TrajectoryPlanner.cpp.i
+src/coords/CoordsUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.i
+.PHONY : src/coords/CoordsUtils.cpp.i
 
-src/TrajectoryPlanner.s: src/TrajectoryPlanner.cpp.s
+src/coords/CoordsUtils.s: src/coords/CoordsUtils.cpp.s
 
-.PHONY : src/TrajectoryPlanner.s
+.PHONY : src/coords/CoordsUtils.s
 
 # target to generate assembly for a file
-src/TrajectoryPlanner.cpp.s:
-	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.s
-.PHONY : src/TrajectoryPlanner.cpp.s
+src/coords/CoordsUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.s
+.PHONY : src/coords/CoordsUtils.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -231,6 +204,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/trajectory/TrajectoryGenerator.o: src/trajectory/TrajectoryGenerator.cpp.o
+
+.PHONY : src/trajectory/TrajectoryGenerator.o
+
+# target to build an object file
+src/trajectory/TrajectoryGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o
+.PHONY : src/trajectory/TrajectoryGenerator.cpp.o
+
+src/trajectory/TrajectoryGenerator.i: src/trajectory/TrajectoryGenerator.cpp.i
+
+.PHONY : src/trajectory/TrajectoryGenerator.i
+
+# target to preprocess a source file
+src/trajectory/TrajectoryGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.i
+.PHONY : src/trajectory/TrajectoryGenerator.cpp.i
+
+src/trajectory/TrajectoryGenerator.s: src/trajectory/TrajectoryGenerator.cpp.s
+
+.PHONY : src/trajectory/TrajectoryGenerator.s
+
+# target to generate assembly for a file
+src/trajectory/TrajectoryGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.s
+.PHONY : src/trajectory/TrajectoryGenerator.cpp.s
+
+src/trajectory/TrajectoryPlanner.o: src/trajectory/TrajectoryPlanner.cpp.o
+
+.PHONY : src/trajectory/TrajectoryPlanner.o
+
+# target to build an object file
+src/trajectory/TrajectoryPlanner.cpp.o:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o
+.PHONY : src/trajectory/TrajectoryPlanner.cpp.o
+
+src/trajectory/TrajectoryPlanner.i: src/trajectory/TrajectoryPlanner.cpp.i
+
+.PHONY : src/trajectory/TrajectoryPlanner.i
+
+# target to preprocess a source file
+src/trajectory/TrajectoryPlanner.cpp.i:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.i
+.PHONY : src/trajectory/TrajectoryPlanner.cpp.i
+
+src/trajectory/TrajectoryPlanner.s: src/trajectory/TrajectoryPlanner.cpp.s
+
+.PHONY : src/trajectory/TrajectoryPlanner.s
+
+# target to generate assembly for a file
+src/trajectory/TrajectoryPlanner.cpp.s:
+	$(MAKE) -f CMakeFiles/path_planning.dir/build.make CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.s
+.PHONY : src/trajectory/TrajectoryPlanner.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,18 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... path_planning"
-	@echo "... src/BehaviorPlanner.o"
-	@echo "... src/BehaviorPlanner.i"
-	@echo "... src/BehaviorPlanner.s"
-	@echo "... src/TrajectoryGenerator.o"
-	@echo "... src/TrajectoryGenerator.i"
-	@echo "... src/TrajectoryGenerator.s"
-	@echo "... src/TrajectoryPlanner.o"
-	@echo "... src/TrajectoryPlanner.i"
-	@echo "... src/TrajectoryPlanner.s"
+	@echo "... src/behavior/BehaviorPlanner.o"
+	@echo "... src/behavior/BehaviorPlanner.i"
+	@echo "... src/behavior/BehaviorPlanner.s"
+	@echo "... src/coords/CoordsUtils.o"
+	@echo "... src/coords/CoordsUtils.i"
+	@echo "... src/coords/CoordsUtils.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/trajectory/TrajectoryGenerator.o"
+	@echo "... src/trajectory/TrajectoryGenerator.i"
+	@echo "... src/trajectory/TrajectoryGenerator.s"
+	@echo "... src/trajectory/TrajectoryPlanner.o"
+	@echo "... src/trajectory/TrajectoryPlanner.i"
+	@echo "... src/trajectory/TrajectoryPlanner.s"
 .PHONY : help
 
 

@@ -60,72 +60,87 @@ include CMakeFiles/path_planning.dir/flags.make
 CMakeFiles/path_planning.dir/src/main.cpp.o: CMakeFiles/path_planning.dir/flags.make
 CMakeFiles/path_planning.dir/src/main.cpp.o: ../src/main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/path_planning.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/main.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/main.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp
 
 CMakeFiles/path_planning.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp > CMakeFiles/path_planning.dir/src/main.cpp.i
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp > CMakeFiles/path_planning.dir/src/main.cpp.i
 
 CMakeFiles/path_planning.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp -o CMakeFiles/path_planning.dir/src/main.cpp.s
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/main.cpp -o CMakeFiles/path_planning.dir/src/main.cpp.s
 
-CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o: CMakeFiles/path_planning.dir/flags.make
-CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o: ../src/TrajectoryPlanner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.cpp
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o: CMakeFiles/path_planning.dir/flags.make
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o: ../src/trajectory/TrajectoryPlanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryPlanner.cpp
 
-CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.cpp > CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.i
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryPlanner.cpp > CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.i
 
-CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryPlanner.cpp -o CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.s
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryPlanner.cpp -o CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.s
 
-CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o: CMakeFiles/path_planning.dir/flags.make
-CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o: ../src/BehaviorPlanner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehaviorPlanner.cpp
+CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o: CMakeFiles/path_planning.dir/flags.make
+CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o: ../src/behavior/BehaviorPlanner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/behavior/BehaviorPlanner.cpp
 
-CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehaviorPlanner.cpp > CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.i
+CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/behavior/BehaviorPlanner.cpp > CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.i
 
-CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/BehaviorPlanner.cpp -o CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.s
+CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/behavior/BehaviorPlanner.cpp -o CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.s
 
-CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o: CMakeFiles/path_planning.dir/flags.make
-CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o: ../src/TrajectoryGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryGenerator.cpp
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o: CMakeFiles/path_planning.dir/flags.make
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o: ../src/trajectory/TrajectoryGenerator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryGenerator.cpp
 
-CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryGenerator.cpp > CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.i
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryGenerator.cpp > CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.i
 
-CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/TrajectoryGenerator.cpp -o CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.s
+CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/trajectory/TrajectoryGenerator.cpp -o CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.s
+
+CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o: CMakeFiles/path_planning.dir/flags.make
+CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o: ../src/coords/CoordsUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o"
+	/bin/x86_64-linux-gnu-g++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o -c /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/coords/CoordsUtils.cpp
+
+CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.i"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/coords/CoordsUtils.cpp > CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.i
+
+CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.s"
+	/bin/x86_64-linux-gnu-g++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/src/coords/CoordsUtils.cpp -o CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.s
 
 # Object files for target path_planning
 path_planning_OBJECTS = \
 "CMakeFiles/path_planning.dir/src/main.cpp.o" \
-"CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o" \
-"CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o" \
-"CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o"
+"CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o" \
+"CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o" \
+"CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o" \
+"CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o"
 
 # External object files for target path_planning
 path_planning_EXTERNAL_OBJECTS =
 
 path_planning: CMakeFiles/path_planning.dir/src/main.cpp.o
-path_planning: CMakeFiles/path_planning.dir/src/TrajectoryPlanner.cpp.o
-path_planning: CMakeFiles/path_planning.dir/src/BehaviorPlanner.cpp.o
-path_planning: CMakeFiles/path_planning.dir/src/TrajectoryGenerator.cpp.o
+path_planning: CMakeFiles/path_planning.dir/src/trajectory/TrajectoryPlanner.cpp.o
+path_planning: CMakeFiles/path_planning.dir/src/behavior/BehaviorPlanner.cpp.o
+path_planning: CMakeFiles/path_planning.dir/src/trajectory/TrajectoryGenerator.cpp.o
+path_planning: CMakeFiles/path_planning.dir/src/coords/CoordsUtils.cpp.o
 path_planning: CMakeFiles/path_planning.dir/build.make
 path_planning: CMakeFiles/path_planning.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable path_planning"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/michal.paprcka/workspaces/CarND-Path-Planning-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable path_planning"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/path_planning.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

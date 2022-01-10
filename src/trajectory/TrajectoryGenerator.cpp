@@ -1,15 +1,15 @@
 #include "TrajectoryGenerator.hpp"
-#include "spline.h"
-#include "debug.h"
-#include "helpers.h"
+#include "../utils/spline.h"
+#include "../utils/debug.h"
+#include "../utils/helpers.h"
 
 //#define ENABLE_COORD_LOG    
 //#define ENABLE_SPLINE_LOG
 
 #ifdef ENABLE_COORD_LOG
-  #define LOG_COORDS(d, x, y)  {  print_coords(d, x, y); }
+  #define LOG_COORDS(d, v)  {  print_coords(d, v[0], v[1]); }
 #else
-  #define LOG_COORDS(d, x, y) // do nothing
+  #define LOG_COORDS(d, v) // do nothing
 #endif
 
 #ifdef ENABLE_SPLINE_LOG
@@ -18,10 +18,11 @@
   #define LOG_SPLINE_COORDS(d, x, y) // do nothing
 #endif
 
-vector<vector<double>> TrajectoryGenerator::generateTrajectory(CarState from, TransitionState plan, int steps) {
+Trajectory TrajectoryGenerator::generateSplineTrajectory(CarState from, TransitionState plan, int steps) {
     
     vector<double> sparse_x;
     vector<double> sparse_y;
+
     double ref_x = from.carX();
     double ref_y = from.carY();
     double ref_yaw = from.carYaw();
@@ -66,8 +67,7 @@ vector<vector<double>> TrajectoryGenerator::generateTrajectory(CarState from, Tr
     double target_d = sqrt(pow(target_x, 2) + pow(target_y, 2));
     double x_add_on = 0;
     
-    vector<double> next_x_vals;
-    vector<double> next_y_vals;
+    vector<XYCoords> next_vals;
 
     // add new points to the path
     for (int i = 0; i < steps; i++) {
@@ -94,12 +94,26 @@ vector<vector<double>> TrajectoryGenerator::generateTrajectory(CarState from, Tr
         x_point += ref_x;
         y_point += ref_y;
 
-        next_x_vals.push_back(x_point);
-        next_y_vals.push_back(y_point);
+        next_vals.push_back({x_point, y_point});
     }
 
-    LOG_COORDS("NEW_COORDS: ", next_x_vals, next_y_vals);
+    LOG_COORDS("NEW_COORDS: ", next_vals);
 
-    // along with new coordinates, we need to report the velocity we achieved. car_speed reported by the sim is unreliable.
-    return {next_x_vals, next_y_vals, {ref_velocity}};
+    return { next_vals, ref_velocity } ;
+}
+
+vector<FrenetCoords> TrajectoryGenerator::generateLineTrajectory(SensedCarState car, int steps) {
+    double s = car.s();
+    double d = car.d();
+    double speed = car.speed();
+
+    // trajectory for the car. we assume it will stay in its lane the entire time and will keep its d value.
+    vector<FrenetCoords> car_trajectory;
+
+    for (int i = 0; i < steps; i++) {
+        s += 0.02 * speed;
+        car_trajectory.push_back({s, d});
+    }
+
+    return car_trajectory;
 }

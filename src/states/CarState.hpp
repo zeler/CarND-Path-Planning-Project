@@ -1,6 +1,8 @@
 #ifndef CAR_STATE_H
 #define CAR_STATE_H
 
+#include "../utils/helpers.h"
+
 class CarState { 
     public:
         CarState(double prev_car_x, double prev_car_y, double car_x, double car_y, double car_s, double car_d, double car_yaw, double car_speed) 
@@ -21,6 +23,8 @@ class CarState {
         double carSpeed() const { return car_speed; }
 
         double carD() const { return car_d; }        
+
+        int carLane() const { return deriveLane(car_d); }
 
     private:
         double prev_car_x; 

@@ -3,13 +3,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "json.hpp"
+#include "utils/json.hpp"
 #include "Eigen-3.3/Eigen/Core"
 #include "Eigen-3.3/Eigen/QR"
-#include "helpers.h"
-#include "TrajectoryPlanner.hpp"
-#include "BehaviorPlanner.hpp"
-#include "debug.h"
+#include "utils/helpers.h"
+#include "trajectory/TrajectoryPlanner.hpp"
+#include "behavior/BehaviorPlanner.hpp"
+#include "utils/debug.h"
+#include "coords/XYCoords.hpp"
 
 // for convenience
 using nlohmann::json;
@@ -56,8 +57,10 @@ int main() {
   const double  max_speed = 49.5;
   const int starting_lane = 1;
 
-  TrajectoryPlanner tp {map_waypoints_s, map_waypoints_x, map_waypoints_y};
-  BehaviorPlanner bp {max_speed, starting_lane};
+  CoordsUtils cu { map_waypoints_s, map_waypoints_x, map_waypoints_y };
+  TrajectoryGenerator tg {map_waypoints_s, map_waypoints_x, map_waypoints_y, cu};
+  BehaviorPlanner bp {max_speed, tg, cu};
+  TrajectoryPlanner tp {tg, bp, cu};
 
   h.onMessage([&tp, &bp]
               (uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length,
@@ -100,9 +103,9 @@ int main() {
 
           json msgJson;
 
-          bp.update(car_s, car_d, car_speed, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
           tp.update(car_x, car_y, car_s, car_d, car_yaw, car_speed, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
-          vector<vector<double>> trajectory = tp.planTrajectory(bp.getNextState());
+          vector<XYCoords> trajectoryXY = tp.planTrajectory();
+          vector<vector<double>> trajectory = split(trajectoryXY);
 
           msgJson["next_x"] = trajectory[0];
           msgJson["next_y"] = trajectory[1];
@@ -119,10 +122,10 @@ int main() {
     }  // end websocket if
   }); // end h.onMessage
 
-  h.onConnection([&h, &bp, &tp, &max_speed, &starting_lane](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
+  h.onConnection([&h, &bp, &tp, &max_speed](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
     std::cout << "Connected!!!" << std::endl;
     //reset modules if we disconnected
-    bp.reset(max_speed, starting_lane);
+    bp.reset(max_speed);
     tp.setRefVelocity(0);
   });
 
