@@ -7,7 +7,7 @@
 using std::begin;
 using std::end;
 
-#define ENABLE_STATE_LOG    
+//#define ENABLE_STATE_LOG    
 
 #ifdef ENABLE_STATE_LOG
   #define LOG_STATE(d, s)  {  print_state(d, s); }
@@ -79,8 +79,7 @@ TransitionState BehaviorPlanner::chooseNextState(vector<vector<Prediction>> pred
     CarState state { rc.refXPrevious(), rc.refYPrevious(), rc.refX(), rc.refY(), rc.refS(), rc.refD(), rc.refYaw(), car_speed};
 
     vector<TransitionState> successor_states = generatePossibleSuccessorStates(predictions, state);
-    std::cout << "Lane at the BP step: " << state.carLane() << "\n";
-    std::cout << "Our S: " << rc.refS() << " Our D: " << rc.refD() << "\n";
+    //std::cout << "Our S: " << rc.refS() << " Our D: " << rc.refD() << "\n";
 
     LOG_SUCCESSOR_STATES("Successor states: ", successor_states);
 

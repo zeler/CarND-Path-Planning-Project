@@ -45,7 +45,7 @@ class TrajectoryPlanner {
         TransitionState plan;
 
         const double speed_delta = 0.224;
-        const int step_count = 50;
+        const int step_count = 25;
 };
 
 #endif
