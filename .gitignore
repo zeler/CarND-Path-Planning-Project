@@ -122,3 +122,4 @@ venv.bak/
 
 .github/
 .vscode/
+**/output_log.txt
