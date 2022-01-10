@@ -42,7 +42,7 @@ double car_in_lane_cost(int intended_lane, int current_lane) {
 double collision_cost_frenet(vector<FrenetCoords> t1, vector<FrenetCoords> t2) {
     for (int i=0; i < t1.size(); i++) {
         double dist = distanceBetween({ t1[i].s(), t1[i].d() }, { t2[i].s(), t2[i].d() });
-        if (dist < 3.80) {
+        if (dist < 3.85) {
           //  std::cout << "Colliosion detected because our: " << t1[i].s() << ", " << t1[i].d() << " and other " << t2[i].s() << ", " << t2[i].d() << " and dist = " << dist << "\n";
             return 1.0;
         }

@@ -121,7 +121,7 @@ TransitionState BehaviorPlanner::chooseNextState(vector<vector<Prediction>> pred
             double stateFinalS = state_trajectory[state_trajectory.size() - 1].s();
 
             // TODO: toto asi spocitat len pre auto vo finalnej lane
-            double proximity_cost = std::max(car_proximity_cost(predictedFinalS, stateFinalS, 7), proximity_cost);
+            double proximity_cost = std::max(car_proximity_cost(predictedFinalS, stateFinalS, 6.5), proximity_cost);
             cost +=  car_proximity_cost_weight * proximity_cost;
         }
 

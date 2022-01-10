@@ -49,11 +49,11 @@ class BehaviorPlanner {
 
         RefCoords rc;
 
-        const double maximum_relevant_distance = 50;
+        const double maximum_relevant_distance = 100;
         const int prediction_step_count = 100;
 
         const double collision_cost_weight = 100.0;
-        const double car_proximity_cost_weight = 0.9;
+        const double car_proximity_cost_weight = 0.4;
 
         const double car_in_lane_cost_weight = 0.02;
         const double driving_outside_lane_center_cost_weight = 0.5;
