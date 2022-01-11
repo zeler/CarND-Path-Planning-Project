@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 
+#include "behavior_consts.hpp"
 #include "../states/TransitionState.hpp"
 #include "../trajectory/TrajectoryGenerator.hpp"
 #include "../coords/CoordsUtils.hpp"
@@ -48,18 +49,6 @@ class BehaviorPlanner {
         CoordsUtils coordsUtils;
 
         RefCoords rc;
-
-        const double maximum_relevant_distance = 100;
-        const int prediction_step_count = 100;
-
-        const double collision_cost_weight = 1.0;
-        const double car_proximity_cost_weight = 0.4;
-
-        const double car_in_lane_cost_weight = 0.02;
-        const double driving_outside_lane_center_cost_weight = 0.5;
-
-        const double intended_speed_cost_weight = 0.8; 
-        const double cars_in_front_cost_weight = 0.05f;
         
         vector<TransitionState> generatePossibleSuccessorStates(vector<vector<Prediction>> predictions, CarState cs);
         vector<TransitionState> getStatesForLane(int lane, double car_s, vector<vector<Prediction>> predictions);

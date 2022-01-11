@@ -39,10 +39,10 @@ double car_in_lane_cost(int intended_lane, int current_lane) {
     }
 }
 
-double collision_cost_frenet(vector<FrenetCoords> t1, vector<FrenetCoords> t2) {
+double collision_cost_frenet(vector<FrenetCoords> t1, vector<FrenetCoords> t2, double collision_distance) {
     for (int i=0; i < t1.size(); i++) {
         double dist = distanceBetween({ t1[i].s(), t1[i].d() }, { t2[i].s(), t2[i].d() });
-        if (dist < 3.88) {
+        if (dist < collision_distance) {
           //  std::cout << "Colliosion detected because our: " << t1[i].s() << ", " << t1[i].d() << " and other " << t2[i].s() << ", " << t2[i].d() << " and dist = " << dist << "\n";
             return 1.0;
         }
@@ -64,11 +64,8 @@ double driving_outside_lane_center_cost(vector<FrenetCoords> trajectory) {
     return stepCnt / trajectory.size();
 }
 
-double cars_in_front_cost(int count) {
-    if (count > 0) {
-        return 1.0;
-    } else {
-        return 0.0;
-    }
+// rewards bigger distance between cars
+double cars_in_front_cost(double s, double car_s) {
+    return logistic(2 * (s - car_s) / (s - car_s));
 }
 #endif
