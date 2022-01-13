@@ -41,11 +41,10 @@ class TrajectoryPlanner {
         BehaviorPlanner bp;
         CoordsUtils coordsUtils;
 
-        bool plan_executed = true;
         TransitionState plan;
 
         //const double speed_delta = 0.224;
-        const double speed_delta = 0.4;
+        const double speed_delta = 0.45;
         const int step_count = 25;
 };
 

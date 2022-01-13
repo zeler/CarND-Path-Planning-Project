@@ -2,18 +2,21 @@
 #define BEHAVIOR_CONSTS_H
 
 const double maximum_relevant_distance = 100;
-const double maximum_relevant_distance_behind = 20;
-const double min_proximity = 6.5;
-const double collision_distance = 3.8;
+const double maximum_relevant_distance_behind = 25;
+const double min_proximity = 8.5;
+const double collision_distance = 3.0;
+const double collision_in_s_distance_min_d = 2.8;
+const double collision_in_s_distance = 4;
 const int prediction_step_count = 100;
 
-const double collision_cost_weight = 5.0;
-const double car_proximity_cost_weight = 0.9;
+const double collision_cost_weight = 0.0; // TODO Set to 5
+const double collision_cost_in_s_weight = 5.0;
+const double car_proximity_cost_weight = 0.0;
 
-const double car_in_lane_cost_weight = 0.01;
-const double driving_outside_lane_center_cost_weight = 0.0;
+const double car_in_lane_cost_weight = 0.0001;
+const double driving_outside_lane_center_cost_weight = 5.0;
 
 const double intended_speed_cost_weight = 0.65; 
-const double cars_in_front_cost_weight = 0.01f;
+const double cars_in_front_cost_weight = 0.02f;
 
 #endif

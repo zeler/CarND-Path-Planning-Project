@@ -98,23 +98,17 @@ TransitionState BehaviorPlanner::chooseNextState(vector<vector<Prediction>> pred
                          + car_in_lane_cost_weight * car_in_lane_cost(ss.getLane(), state.carLane())
                          + driving_outside_lane_center_cost_weight * driving_outside_lane_center_cost(state_trajectory);
 
-        double collision_cost = 0;
         for (int i = 0; i < predictions.size(); i++) {
-           // std::cout << " ---- Line: " << i << " ----\n";
-
             for (int k = 0; k < predictions[i].size(); k++) {          
                 vector<FrenetCoords> predictedTraj = predictions[i][k].predictedTrajectory();
-                double cc = collision_cost_frenet(state_trajectory, predictedTraj, collision_distance);
-                
-                if (cc > 0) {
-             //       std::cout << " Car distance: " << predictions[i][k].sensedCarState().s() << ", " << predictions[i][k].sensedCarState().d() << "\n";
-                    collision_cost = std::max(collision_cost, cc);
-                }
+               // double collision_cost = collision_cost_frenet(state_trajectory, predictedTraj, collision_distance);
+               // cost += collision_cost_weight * collision_cost;
+
+                double collision_cost_in_s = collision_cost_in_s_frenet(state_trajectory, predictedTraj, collision_in_s_distance, collision_in_s_distance_min_d);
+                cost += collision_cost_in_s_weight * collision_cost_in_s; 
             }
         }
-
-        cost += collision_cost_weight * collision_cost;
-
+        
         if (predictions[ss.getLane()].size() > 0) {
             double stateFinalS = state_trajectory[state_trajectory.size() - 1].s();
             bool closestCarAccounted = false;
@@ -123,8 +117,7 @@ TransitionState BehaviorPlanner::chooseNextState(vector<vector<Prediction>> pred
                 vector<FrenetCoords> predictedFinalTraj = predictions[ss.getLane()][i].predictedTrajectory();
                 double predictedFinalS = predictedFinalTraj[predictedFinalTraj.size() - 1].s();
 
-                // TODO: toto asi spocitat len pre auto vo finalnej lane
-                double proximity_cost = std::max(car_proximity_cost(predictedFinalS, stateFinalS, min_proximity), proximity_cost);
+                double proximity_cost = car_proximity_cost(predictedFinalS, stateFinalS, min_proximity);
                 cost +=  car_proximity_cost_weight * proximity_cost;
 
                 if (predictedFinalS > stateFinalS && !closestCarAccounted) {

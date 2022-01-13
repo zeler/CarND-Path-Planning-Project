@@ -31,7 +31,7 @@ class TrajectoryGenerator {
         CoordsUtils cu;
 
         //const double speed_delta = 0.224;
-        const double speed_delta = 0.336;
+        const double speed_delta = 0.32;
         const double sparse_point_distance = 40;
 };
 

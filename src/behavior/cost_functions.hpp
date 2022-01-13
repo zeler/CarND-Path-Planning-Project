@@ -39,6 +39,18 @@ double car_in_lane_cost(int intended_lane, int current_lane) {
     }
 }
 
+double collision_cost_in_s_frenet(vector<FrenetCoords> t1, vector<FrenetCoords> t2, double collision_distance, double collision_in_s_distance_min_d) {
+    for (int i=0; i < t1.size(); i++) {
+        if (abs(t1[i].d() - t2[i].d()) < collision_in_s_distance_min_d) {
+            if (abs(t1[i].s() - t2[i].s()) < collision_distance) {
+                return 1.0;
+            }
+        }
+    }
+
+    return 0.0;
+}
+
 double collision_cost_frenet(vector<FrenetCoords> t1, vector<FrenetCoords> t2, double collision_distance) {
     for (int i=0; i < t1.size(); i++) {
         double dist = distanceBetween({ t1[i].s(), t1[i].d() }, { t2[i].s(), t2[i].d() });
@@ -56,7 +68,7 @@ double driving_outside_lane_center_cost(vector<FrenetCoords> trajectory) {
     
     for (int i=0; i < trajectory.size(); i++) {
         double pos = fmod(trajectory[i].d(), 4);
-        if (pos < 1 || pos > 3) {
+        if (pos < 1.5 || pos > 2.5) {
             stepCnt++;
         }
     }

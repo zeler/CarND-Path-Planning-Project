@@ -13,11 +13,7 @@
 
 vector<XYCoords> TrajectoryPlanner::planTrajectory() {
 
-    // if the previous plan has already been executed, ask for a new one
-    if (plan_executed) {
-      plan = bp.getNextState();
-    //  plan_executed = false;
-    }
+    plan = bp.getNextState();
     
     int previous_path_size = previous_path_x.size();
     RefCoords rc = coordsUtils.toRefCoords(car_x, car_y, car_yaw, previous_path_x, previous_path_y, car_s, car_d, end_path_s, end_path_d);
@@ -70,11 +66,6 @@ void TrajectoryPlanner::update(double car_x,
     this->sensor_fusion = sensor_fusion;
 
     double planned_center_of_lane = getCenterOfLaneFrenet(plan.getLane());
-
-    if (inRange(0.85 * planned_center_of_lane, 1.15 * planned_center_of_lane, car_d) 
-        && inRange(0.85 * plan.targetSpeed(), 1.15 * plan.targetSpeed(), ref_velocity)) {
-      plan_executed = true;
-    }
 
     // we need to do this update here, as car speed information from the sim is unreliable
     bp.update(car_x, car_y, car_s, car_d, car_yaw, ref_velocity, end_path_s, end_path_d, previous_path_x, previous_path_y, sensor_fusion);
