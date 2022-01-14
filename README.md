@@ -65,12 +65,6 @@ the path has processed since last time.
 
 2. There will be some latency between the simulator running and the path planner returning a path, with optimized code usually its not very long maybe just 1-3 time steps. During this delay the simulator will continue using points that it was last given, because of this its a good idea to store the last points you have used so you can have a smooth transition. previous_path_x, and previous_path_y can be helpful for this transition since they show the last points given to the simulator controller with the processed points already removed. You would either return a path that extends this previous path or make sure to create a new path that has a smooth transition with this last path.
 
-## Tips
-
-A really helpful resource for doing this project and creating smooth trajectories was using http://kluge.in-chemnitz.de/opensource/spline/, the spline function is in a single hearder file is really easy to use.
-
----
-
 ## Dependencies
 
 * cmake >= 3.5
@@ -92,54 +86,96 @@ A really helpful resource for doing this project and creating smooth trajectorie
     git checkout e94b6e1
     ```
 
-## Editor Settings
+# Reflection
 
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
+To make the project easier to manage and extend in the future, I decided to split it into multiple modules. Each module has distinct responsibilities:
 
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
+- TrajectoryPlanner - responsible for planning of the trajectory between each processing cycle
+- TrajectoryGenerator - utility module reponsible for generating various trajectories for both our car and other traffic
+- BehaviorPlanner - high level component which generates multiple plans for the next cycle and picks the most optimal one
 
-## Code Style
+As a general rule, I tried to use Frenet coordinates where possible. They make it much easier to do any kind of math as well as to vizualize what is actually going on based on the pure numbers returned by the planners and/or sensor fusion. Also, for easier work with code and to prevent unnecessary bugs (e.g. comparing frenet to XY coordinates), I use various wrappers for basic data types across the code. 
 
-Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+## Trajectory planner
 
-## Project Instructions and Rubric
+Trajectory planner produces new trajectory in each processing cycle of the car. The car simulator advances the car each 0.02 seconds (which I call "step") and trajectory planner always plans 35 steps ahead, which gives us 0.7 seconds of planned trajectory. To ensure smooth transition between cycles, we always add new steps to whichever steps weren't processed in the last cycle. For example, if we processed only 10 steps in the last cycle out of 35, Trajectory planner will plan only 10 new steps based on a new plan. It is important to note, that even though planning ahead gives us smooth trajectory as well as more time to process sensor inputs, it is crucial to set it only to reasonable value, because otherwise the car wouldn't be able to react to the rest of traffic (e.g. car changing lanes). Therefore, using shorter plans are preferrable. The choice of the path length is ultimately dependent on computing capabilities of our car/computer. 
 
-Note: regardless of the changes you make, your project must be buildable using
-cmake and make!
+## Trajectory generator
+
+Trajectory generator is responsible for generating trajectories for our car and also for generating of predicted trajectories for the rest of the traffic. I leveraged the Spline library to generate smooth paths without jerk. Maximum jerk for my trajectory generator is set to about 7 m/s (in case of heavy braking or fast acceleration). TrajectoryGenerator takes as an input the current state of our car (e.g. position, speed...), the plan created by BehaviorPlanner and number of steps that should be generated. Maximum speed of the car has been set to 49 Mph. 
+
+This module also generates predictions for the rest of the traffic. We always predict only straight paths (in Frenet coordinates) based on current car speed and position . 
+
+## Behavior planner 
+
+The path planning logic is implemented in behavior planner. Essentially, it follows the code from the Behavior Planning lesson:
+
+  def transition_function(predictions, current_fsm_state, current_pose, cost_functions, weights):
+    # only consider states which can be reached from current FSM state.
+    possible_successor_states = successor_states(current_fsm_state)
+
+    # keep track of the total cost of each state.
+    costs = []
+    for state in possible_successor_states:
+        # generate a rough idea of what trajectory we would
+        # follow IF we chose this state.
+        trajectory_for_state = generate_trajectory(state, current_pose, predictions)
+
+        # calculate the "cost" associated with that trajectory.
+        cost_for_state = 0
+        for i in range(len(cost_functions)) :
+            # apply each cost function to the generated trajectory
+            cost_function = cost_functions[i]
+            cost_for_cost_function = cost_function(trajectory_for_state, predictions)
+
+            # multiply the cost by the associated weight
+            weight = weights[i]
+            cost_for_state += weight * cost_for_cost_function
+         costs.append({'state' : state, 'cost' : cost_for_state})
+
+    # Find the minimum cost state.
+    best_next_state = None
+    min_cost = 9999999
+    for i in range(len(possible_successor_states)):
+        state = possible_successor_states[i]
+        cost  = costs[i]
+        if cost < min_cost:
+            min_cost = cost
+            best_next_state = state 
+
+    return best_next_state
+
+Behavior planner predicts traffic for 100 steps ahead (which equals to 2 seconds). Longer predictions are not necessary as the traffic changes quite often and thus renders the plan obsolete. 
+
+### Generating successor states
+
+First, BP generates a bunch of possible successor states for each car lane. It always generates a state at maximum speed. Then it also tries to generate states with various speed of cars ahead of us in adjacent lanes (where possible), as well as with slight lower speeds (to cover also the need when the car must slow down because it got too close to other cars).
+
+### Generating predictions for surrounding traffic
+
+When generating predictions for surround traffic, BP takes into consideration only cars up to 100 m ahead of us and 25 m behind us (for collision detection). The actual predictions are created by TrajectoryGenerator module, based on the information from sensor fusion (car position, speed).
+
+### Picking the best successor state
+
+The final step of behavior planning cycle is to assign costs to each generated state. To do this, I use a couple of cost functions to determine the feasibility of each state together with the predicted state of traffic:
+
+- intended speed cost - to reward higher car speeds
+- car proximity cost - to rewards if the car keeps buffer from other cars in intended lane
+- car-in-lane cost - which penalizes traffic outside car lanes as well as makes it little harder for the car to change the lane (just to prevent unnecessary line switches)
+- collision cost - to prevent collision with surrounding traffic
+- driving outside lane center cost - to prevent driving between lanes for too long
+- car-in-fron cost - to reward the car for driving in a lane with traffic that is further away (or not present)
+
+All costs have assigned weights, which were tuned to make the car drive safely. See *src/behavior/behavior_consts.hpp* for actual values. 
+Once we assign costs to all states, BP simply picks the plan with the lowest cost and passes it to Trajectory planner. 
+
+## Conclusion
+
+The overall performance of proposed algorithm is meeting the expectation. The car was able to drive for over 30 minutes (over 22 miles) without causing any collision:
+
+![Driving result](img/highway-driving-result.PNG)
+
+Even though the driving is safe and quite optimal in general, further tuning would be required to improve the behavior in some rare case (e.g. with very dense traffic). However, sice it's impossible to simulate such scenarios in the current simulator, I leave this an option for future learning.
 
 
-## Call for IDE Profiles Pull Requests
-
-Help your fellow students!
-
-We decided to create Makefiles with cmake to keep this project as platform
-agnostic as possible. Similarly, we omitted IDE profiles in order to ensure
-that students don't feel pressured to use one IDE or another.
-
-However! I'd love to help people get up and running with their IDEs of choice.
-If you've created a profile for an IDE that you think other students would
-appreciate, we'd love to have you add the requisite profile files and
-instructions to ide_profiles/. For example if you wanted to add a VS Code
-profile, you'd add:
-
-* /ide_profiles/vscode/.vscode
-* /ide_profiles/vscode/README.md
-
-The README should explain what the profile does, how to take advantage of it,
-and how to install it.
-
-Frankly, I've never been involved in a project with multiple IDE profiles
-before. I believe the best way to handle this would be to keep them out of the
-repo root to avoid clutter. My expectation is that most profiles will include
-instructions to copy files to a new location to get picked up by the IDE, but
-that's just a guess.
-
-One last note here: regardless of the IDE used, every submitted project must
-still be compilable with cmake and make./
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
