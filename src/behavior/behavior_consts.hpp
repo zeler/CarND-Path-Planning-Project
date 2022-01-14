@@ -4,7 +4,7 @@
 const double maximum_relevant_distance = 100;
 const double maximum_relevant_distance_behind = 25;
 const double min_proximity = 4;
-const double collision_distance = 3.5;
+const double collision_distance = 3.4;
 const double collision_in_s_distance_min_d = 2.8;
 const double collision_in_s_distance = 4;
 const int prediction_step_count = 100;
