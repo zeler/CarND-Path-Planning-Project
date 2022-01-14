@@ -21,12 +21,16 @@ double intended_speed_cost(double target_speed, double intended_speed) {
 }
 
 // penalizes if the car gets too close to other cars
-double car_proximity_cost(double s, double car_s, double minimum_proximity) {
-    if ((s > car_s) && (s - car_s) < minimum_proximity) {
-        return logistic(2 * (minimum_proximity - (s - car_s)) / (s - car_s));
-    } else {
-        return 0.0;
+double car_proximity_cost(vector<FrenetCoords> t1, vector<FrenetCoords> t2, double minimum_proximity) {
+    double nearest = 10000;
+    for (int i=0; i < t1.size(); i++) {
+        double dist = distanceBetween({ t1[i].s(), t1[i].d() }, { t2[i].s(), t2[i].d() });
+        if (dist < nearest) {
+            nearest = dist;
+        }
     }
+    
+    return logistic(2 * minimum_proximity  / nearest);
 }
 
 double car_in_lane_cost(int intended_lane, int current_lane) {

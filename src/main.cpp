@@ -54,7 +54,7 @@ int main() {
     map_waypoints_dy.push_back(d_y);
   }
 
-  const double  max_speed = 49.5;
+  const double  max_speed = 49.0;
   const int starting_lane = 1;
 
   CoordsUtils cu { map_waypoints_s, map_waypoints_x, map_waypoints_y };
